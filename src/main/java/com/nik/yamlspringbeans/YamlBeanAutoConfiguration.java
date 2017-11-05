@@ -11,6 +11,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. */
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.ApplicationContext;
@@ -19,12 +20,16 @@ import org.springframework.context.annotation.Configuration;
 import javax.annotation.PostConstruct;
 import java.util.Map;
 
+/**
+ *
+ */
 @Configuration
 public class YamlBeanAutoConfiguration {
 
+    private final Logger log = Logger.getLogger(YamlResourceLoader.class);
 
     @Autowired
-    ApplicationContext applicationContext;
+    private ApplicationContext applicationContext;
 
 
     @PostConstruct
@@ -37,7 +42,7 @@ public class YamlBeanAutoConfiguration {
 
         }catch(Exception ex)
         {
-          System.out.println(ex.getMessage());
+            log.error(ex);
         }
     }
 

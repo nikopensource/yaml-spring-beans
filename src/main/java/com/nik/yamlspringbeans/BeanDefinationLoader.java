@@ -21,11 +21,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+
 public class BeanDefinationLoader {
 
-    BeanDefinitionRegistry registry;
+    private BeanDefinitionRegistry registry;
 
-    Map<String,Object> beanPropertyMap;
+    private Map<String,Object> beanPropertyMap;
 
     public BeanDefinationLoader(BeanDefinitionRegistry registry, Map<String,Object> beanPropertyMap)
     {

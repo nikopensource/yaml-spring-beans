@@ -20,9 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Read yaml file from resources and set into YamlMapFactoryBean
+ */
 public class YamlResourceLoader {
-
-    private Logger log = Logger.getLogger(YamlResourceLoader.class);
 
     ApplicationContext applicationContext;
 
@@ -30,6 +31,7 @@ public class YamlResourceLoader {
     {
         this.applicationContext = applicationContext;
     }
+
 
     public Map<String,Object> loadYamlResource() {
         Map<String, Object> listOfBeans = applicationContext.getBeansWithAnnotation(ImportYamlResource.class);
